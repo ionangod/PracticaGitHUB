@@ -11,29 +11,41 @@ public class Calculadora {
 		this.op2 = op2;
 	}
 	
-	double suma() {
+	public double suma() {
 		return op1+op2;
 	}
 	
-	double resta() {
+	public double resta() {
 		return op1-op2;
 	}
 	
-	double division() {
+	public double division() {
 		if(op2==0) {
 			throw new IllegalArgumentException("El divisor es 0");
 		}
 		return op1/op2;
 	}
+	public double potencia() {
+		if (op1==0)
+			return 1;
+		if (op2<0)
+			return -Math.pow(op1, op2);
+		return Math.pow(op1, op2);
+	}
+
+	@Override
+	public String toString() {
+		return "Calculadora de Ionan:\nOperando1 = " + op1 + "\nOperando2 =" + op2;
+	}
 	
-	//TODO: Añadir la operación potencia, que devuelve
+	//TODO: Aï¿½adir la operaciï¿½n potencia, que devuelve
 	//op1 elevado a op2 con las siguientes reglas: 
-	//-Por convenio cualquier número elevado a 0 es igual a 1.
-	//-Un número "n" elevado a una potencia negativa "-p" es igual a 1/(n^p)
-	//Así 232^0 = 1; y 2^(-3)=1/2^3=1/8
+	//-Por convenio cualquier nï¿½mero elevado a 0 es igual a 1.
+	//-Un nï¿½mero "n" elevado a una potencia negativa "-p" es igual a 1/(n^p)
+	//Asï¿½ 232^0 = 1; y 2^(-3)=1/2^3=1/8
 	
 	
-	//TODO: Añadir la operacion toString que devuelva los operandos
+	//TODO: Aï¿½adir la operacion toString que devuelva los operandos
 	//la cadena:
 	//"Calculadora de <vuestroNombre>: "
 	//"operando1 = <op1>"
